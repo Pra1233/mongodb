@@ -1,29 +1,26 @@
-const mongodb=require('mongodb');
-const MongoClient=mongodb.MongoClient;
+// const mongodb=require('mongodb');
+// const MongoClient=mongodb.MongoClient;
 
-let _db;
+// let _db;
 
-const mongoConnect =(callback)=>{
+// const mongoConnect =(callback)=>{
 
-MongoClient.connect('mongodb+srv://prabhat:prabhat@cluster0.2n1qplp.mongodb.net/')
-.then(client=>{
-  console.log("COnnected");
-  _db=client.db()
-  callback();
-})
-.catch(err=>console.log(err));
+// MongoClient.connect('mongodb+srv://prabhat:prabhat@cluster0.2n1qplp.mongodb.net/')
+// .then(client=>{
+//   console.log("COnnected");
+//   _db=client.db()
+//   callback();
+// })
+// .catch(err=>console.log(err));
 
-}
+// }
 
-const getDb=()=>{
-  if(_db){
-    return _db;
-  }
-  throw 'NO DATABASE FOUND'
-};
+// const getDb=()=>{
+//   if(_db){
+//     return _db;
+//   }
+//   throw 'NO DATABASE FOUND'
+// };
 
-
-exports.mongoConnect=mongoConnect;
-exports.getDb=getDb;
-
-
+// exports.mongoConnect=mongoConnect;
+// exports.getDb=getDb;
