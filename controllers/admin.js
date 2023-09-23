@@ -19,6 +19,7 @@ exports.postAddProduct = (req, res, next) => {
     price: price,
     description: description,
     imageUrl: imageUrl,
+    userId: req.user, //middleware  //bydefault add _id
   });
   product
     .save() //save method provided by mongooose
