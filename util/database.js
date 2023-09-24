@@ -1,26 +1,8 @@
-// const mongodb=require('mongodb');
-// const MongoClient=mongodb.MongoClient;
+require('dotenv').config();
 
-// let _db;
-
-// const mongoConnect =(callback)=>{
-
-// MongoClient.connect('mongodb+srv://prabhat:prabhat@cluster0.2n1qplp.mongodb.net/')
-// .then(client=>{
-//   console.log("COnnected");
-//   _db=client.db()
-//   callback();
-// })
-// .catch(err=>console.log(err));
-
-// }
-
-// const getDb=()=>{
-//   if(_db){
-//     return _db;
-//   }
-//   throw 'NO DATABASE FOUND'
-// };
-
-// exports.mongoConnect=mongoConnect;
-// exports.getDb=getDb;
+const Sequelize=require('sequelize');
+const sequelize =new Sequelize(process.env.DATABASENAME,process.env.DB_USERNAME,process.env.PASSWORD,{
+  dialect:'mysql',
+  host:process.env.DB_HOST,
+});
+module.exports=sequelize;
